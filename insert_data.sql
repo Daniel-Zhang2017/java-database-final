@@ -1,6 +1,6 @@
 use inventory;
 
-INSERT INTO product (name, category, price, sku)
+INSERT INTO products (name, category, price, sku)
 VALUES
 ('Galaxy S21', 'Mobile', 799.99, 'SKU001'),
 ('iPhone 13', 'Mobile', 999.99, 'SKU002'),
@@ -54,7 +54,7 @@ VALUES
 ('Sony A7 III Camera', 'Accessories', 1999.99, 'SKU050');
 
 
-INSERT INTO store (name, address)
+INSERT INTO stores (name, address)
 VALUES
 ('Tech Store A', '123 Tech Street, Silicon Valley, CA'),
 ('Gadget Hub', '456 Gadget Road, San Francisco, CA'),
