@@ -94,6 +94,14 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByCategoryAndPriceBetween(String category, Double minPrice, Double maxPrice);
 
     /**
+     * Find products by category and name containing the given string (case-insensitive)
+     * @param category the product category
+     * @param name the name pattern to search for
+     * @return list of products matching both category and name pattern
+     */
+    List<Product> findByCategoryAndNameContainingIgnoreCase(String category, String name);
+    
+    /**
      * Check if a product exists with the given SKU
      * @param sku the SKU to check
      * @return true if a product with the SKU exists, false otherwise

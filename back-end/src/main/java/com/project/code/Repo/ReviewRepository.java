@@ -41,6 +41,24 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
     List<Review> findByCustomerId(Long customerId);
 
     /**
+     * Count reviews by product ID and store ID
+     * @param productId the product ID
+     * @param storeId the store ID
+     * @return number of reviews for the product at the store
+     */
+    long countByProductIdAndStoreId(Long productId, Long storeId);
+
+    /**
+     * Find reviews by store ID, product ID and rating range
+     * @param storeId the store ID
+     * @param productId the product ID
+     * @param minRating the minimum rating
+     * @param maxRating the maximum rating
+     * @return list of reviews within the rating range for the product and store
+     */
+    List<Review> findByStoreIdAndProductIdAndRatingBetween(Long storeId, Long productId, Integer minRating, Integer maxRating);
+
+    /**
      * Find reviews by rating greater than or equal to specified value
      * @param rating the minimum rating
      * @return list of reviews with rating >= specified value
